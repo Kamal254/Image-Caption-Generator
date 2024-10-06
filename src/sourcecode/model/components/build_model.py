@@ -17,17 +17,21 @@ class Models():
     def __init__(self):
         pass
 
-    def feature_extraction() ->str:
+    def feature_extraction(self) ->str:
 
 
         model = VGG16()
         model = Model(inputs = model.inputs, outputs = model.layers[-2].output)
 
         features = {}
-        image_dir = os.path.join(flickr_dataset, "Images/flickr30k_images")
-
-        for image_name in tqdm(os.listdir(image_dir)):
-            img_path = image_dir + "/" + image_name
+        datapath = "../../../artifacts/data"
+        # image_dir = os.path(datapath)
+        output_directory = "../../../artifacts/saved_data"
+        for image_name in os.listdir(datapath):
+            if image_name=="captions.txt":
+                continue
+            img_path = datapath + "/" + image_name
+            print(img_path)
             img = load_img(img_path, target_size=(224, 224))
             img = img_to_array(img)
             img = img.reshape(1, img.shape[0], img.shape[1], img.shape[2])
@@ -39,9 +43,8 @@ class Models():
         pickle.dump(features, open(os.path.join(output_directory, 'features.pkl'), 'wb'))
 
 
-    def build_training_model() -> tf.keras.Model:
-        vocab_size = 50
-        max_length = 50
+    def build_training_model(self, max_length, vocab_size) -> tf.keras.Model:
+        
         inputs1 = Input(shape=(4096,))
         fe1 = Dropout(0.4)(inputs1)
         fe2 = Dense(256, activation='relu')(fe1)
@@ -60,3 +63,8 @@ class Models():
         model = Model(inputs=[inputs1, inputs2], outputs=outputs)
 
         return model
+    
+
+
+build_feature_extractor = Models()
+feature_extractor = build_feature_extractor.feature_extraction()

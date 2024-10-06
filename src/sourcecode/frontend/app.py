@@ -34,13 +34,13 @@ vgg16 = VGG16(weights='imagenet', include_top=True)
 fc2_layer = vgg16.get_layer('fc2').output
 model_fc2 = tf.keras.Model(inputs=vgg16.input, outputs=fc2_layer)
 
-Model = tf.keras.models.load_model("caption_generator_model.h5")
+Model = tf.keras.models.load_model("../../artifacts/model/model.h5")
 
 # Load the tokenizer
-with open('tokenizer.pkl', 'rb') as f:
+with open('../../artifacts/saved_data/tokenizer.pkl', 'rb') as f:
     tokenizer = pickle.load(f)
 
-max_length = 50
+max_length = 10
 
 #preproecessing Text
 def predict_caption(model, image, tokenizer, max_length):

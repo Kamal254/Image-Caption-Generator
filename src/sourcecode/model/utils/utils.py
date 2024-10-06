@@ -7,7 +7,7 @@ import joblib
 import base64
 from box.exceptions import BoxValueError
 from box import ConfigBox
-from regression import logger
+from sourcecode import logger
 from pathlib import Path
 from typing import Any
 from ensure import ensure_annotations

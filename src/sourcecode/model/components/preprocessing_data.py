@@ -1,7 +1,7 @@
 import os
 import regex as re
-from src.model.utils.utils import create_dir
-from src import logger
+from sourcecode.model.utils.utils import create_dir
+from sourcecode import logger
 import tqdm
 
 from tensorflow.keras.preprocessing.text import Tokenizer
@@ -13,13 +13,13 @@ class PreprocessingData():
         pass
 
     def preprocess_text_data(self) ->dict:
-        flickr_dataset = "../../dataset/flickr_dataset"
+        flickr_dataset = "../../../artifacts/data"
         with open(os.path.join(flickr_dataset, 'captions.txt'), 'r') as f:
             next(f)
             caption_file = f.read()
         logger.info("Reading Caption file")
         mapping = {}
-        for line in tqdm(caption_file.split('\n')):
+        for line in caption_file.split('\n'):
             tokens = re.split(r'\.jpg,', line)
             if len(tokens) < 2:
                 continue
@@ -53,7 +53,13 @@ class PreprocessingData():
         logger.info(f'vocab size {vocab_size}')
         max_length = max(len(caption.split()) for caption in caption_list)
         logger.info(f'Found Max length of the caption {max_length}')
-        with open('../../../artifacts/tokenizer.pkl', 'wb') as f:
+        saved_data = "../../../artifacts/saved_data"
+        create_dir([saved_data])
+        with open('../../../artifacts/saved_data/tokenizer.pkl', 'wb') as f:
             pickle.dump(tokenizer, f)
 
-        return mapping
+        with open('../../../artifacts/saved_data/mapping.pkl', 'wb') as f:
+            pickle.dump(mapping, f)
+    
+preprocessdata = PreprocessingData()
+preprocessdata.preprocess_text_data()
