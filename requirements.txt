@@ -10,4 +10,15 @@ requests==2.31.0
 gunicorn==22.0.0
 Flask==3.0.3
 tensorflow
+urllib3
+dataclasses
+pathlib
+gdown
+python-box
+pyYAML
+tqdm
+ensure
+joblib
+types-PyYAML
+scipy
 - e.
