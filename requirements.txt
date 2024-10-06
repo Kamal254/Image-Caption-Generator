@@ -21,4 +21,4 @@ ensure
 joblib
 types-PyYAML
 scipy
-- e.
+-e .

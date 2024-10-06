@@ -4,11 +4,15 @@ from src.model.utils.utils import create_dir
 from src import logger
 import tqdm
 
+from tensorflow.keras.preprocessing.text import Tokenizer
+from pickle import dump, load
+import pickle
+
 class PreprocessingData():
     def __init__(self):
         pass
 
-    def preprocess_text_data(self) ->str:
+    def preprocess_text_data(self) ->dict:
         flickr_dataset = "../../dataset/flickr_dataset"
         with open(os.path.join(flickr_dataset, 'captions.txt'), 'r') as f:
             next(f)
@@ -46,6 +50,10 @@ class PreprocessingData():
         tokenizer = Tokenizer()
         tokenizer.fit_on_texts(caption_list)
         vocab_size = len(tokenizer.word_index) + 1
-
+        logger.info(f'vocab size {vocab_size}')
         max_length = max(len(caption.split()) for caption in caption_list)
         logger.info(f'Found Max length of the caption {max_length}')
+        with open('../../../artifacts/tokenizer.pkl', 'wb') as f:
+            pickle.dump(tokenizer, f)
+
+        return mapping
