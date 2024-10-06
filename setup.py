@@ -8,7 +8,7 @@ __version__ = "0.0.0"
 
 REPO_NAME = "Fruit-plant-disease-prediction"
 AUTHOR_USER_NAME = "Kamal254"
-SRC_REPO = "src"
+SRC_REPO = "sourcecode"
 AUTHOR_EMAIL = "mrrobotpc123@gmail.com"
 
 
