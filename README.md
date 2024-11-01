@@ -1,4 +1,5 @@
-# Image Caption Generator
+#Image Caption Generator
+
 This repository contains a Flask application that generates descriptive captions for images using a multimodal model. The model combines computer vision and natural language processing techniques, achieving a **BLEU Score of 0.54**, and is highly effective in producing accurate and meaningful image descriptions.
 
 ![](https://cdn.prod.website-files.com/665da55791fb821ae329876a/66dfcbe7f493a95c49bfb663_Screenshot%202024-09-10%20084401-p-500.png)
@@ -45,7 +46,9 @@ pip install -r requirements.txt
 
 ###### Build the Model
 Replace the Code for Google API and Drive Folder Path to run the Data download , preprocess data and  Model Building Pipeline. 
-
+```bash
+python main.py
+```
 
 ###### Run the Application
 Flask Application will run of the 8000 port.
