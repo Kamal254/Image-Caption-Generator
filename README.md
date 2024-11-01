@@ -1,6 +1,8 @@
 ## Project Goal
 The goal of this project is to develop an Image Caption Generator that automatically generates descriptive captions for any given image. By combining computer vision and natural language processing techniques, the model interprets the content of an image and provides meaningful text descriptions, enhancing applications such as content tagging, accessibility, and visual search.
 
+![](https://cdn.prod.website-files.com/665da55791fb821ae329876a/66dfcbe7f493a95c49bfb663_Screenshot%202024-09-10%20084401-p-500.png)
+
 ### Project Overview
 + **Dataset**
 	+ The project uses the Flickr 8K dataset, which includes 8,000 images and their corresponding captions. The dataset is essential for training the model to understand the relationship between image features and textual descriptions.
