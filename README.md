@@ -1,7 +1,11 @@
+#Image Caption Generator
+This repository contains a Flask application that generates descriptive captions for images using a multimodal model. The model combines computer vision and natural language processing techniques, achieving a **BLEU Score of 0.54**, and is highly effective in producing accurate and meaningful image descriptions.
+
+![](https://cdn.prod.website-files.com/665da55791fb821ae329876a/66dfcbe7f493a95c49bfb663_Screenshot%202024-09-10%20084401-p-500.png)
+
 ## Project Goal
 The goal of this project is to develop an Image Caption Generator that automatically generates descriptive captions for any given image. By combining computer vision and natural language processing techniques, the model interprets the content of an image and provides meaningful text descriptions, enhancing applications such as content tagging, accessibility, and visual search.
 
-![](https://cdn.prod.website-files.com/665da55791fb821ae329876a/66dfcbe7f493a95c49bfb663_Screenshot%202024-09-10%20084401-p-500.png)
 
 ### Project Overview
 + **Dataset**
