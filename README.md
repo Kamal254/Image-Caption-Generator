@@ -1,4 +1,4 @@
-#Image Caption Generator
+# Image Caption Generator
 
 This repository contains a Flask application that generates descriptive captions for images using a multimodal model. The model combines computer vision and natural language processing techniques, achieving a **BLEU Score of 0.54**, and is highly effective in producing accurate and meaningful image descriptions.
 
@@ -8,7 +8,7 @@ This repository contains a Flask application that generates descriptive captions
 The goal of this project is to develop an Image Caption Generator that automatically generates descriptive captions for any given image. By combining computer vision and natural language processing techniques, the model interprets the content of an image and provides meaningful text descriptions, enhancing applications such as content tagging, accessibility, and visual search.
 
 
-### Project Overview
+## Project Overview
 + **Dataset**
 	+ The project uses the Flickr 8K dataset, which includes 8,000 images and their corresponding captions. The dataset is essential for training the model to understand the relationship between image features and textual descriptions.
 
@@ -31,26 +31,26 @@ The goal of this project is to develop an Image Caption Generator that automatic
 	+ Once the model is trained, it can generate captions for new images. The image features are extracted using VGG16, and the trained model generates a descriptive caption, demonstrating its understanding of the visual content.
 
 
-### Installation
+## Installation
 
-###### Clone the Repo
+#### Clone the Repo
 ```bash
 git clone https://github.com/Kamal254/Image-caption-generator.git
 cd Image-caption-generator
 ```
 
-###### Install Requirements
+#### Install Requirements
 ```bash
 pip install -r requirements.txt
 ```
 
-###### Build the Model
+#### Build the Model
 Replace the Code for Google API and Drive Folder Path to run the Data download , preprocess data and  Model Building Pipeline. 
 ```bash
 python main.py
 ```
 
-###### Run the Application
+#### Run the Application
 Flask Application will run of the 8000 port.
 ```bash
 cd src/sourcecode/frontend/
